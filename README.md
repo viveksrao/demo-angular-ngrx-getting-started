@@ -1,6 +1,6 @@
-# DemoAngularNgrxGettingStarted
+# Demo Angular NgRx Getting Started
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.2. There is no real backend server for this demo application, rather it uses the Angular `angular-in-memory-web-api` library, which emulates a backend server and supports basic CRUD, or Create, Read, Update and Delete operations.  
 
 ## Development server
 

@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+  <div class="card-body" *ngIf="projects">
+    <div class="list-group">
+      <button class="list-group-item list-group-item-action rounded-0" *ngFor="let project of projects" [ngClass]="{'active': project?.id === selectedProject?.id}" (click)="projectSelected(project)">{{ project.projectName }}
+        <ng-container *ngIf="displayCode">
+          ({{ project.projectCode }})
+        </ng-container>
+      </button>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+      <div class="form-check col-md-7">
+        <label>
+          <input class="form-check-input" type="checkbox" (change)="checkChanged($event.target.checked)" [checked]="displayCode">Display Project Code
+        </label>
+      </div>
+      <div class="col-md-4 text-right">
+        <button class="btn btn-primary" (click)="newProject()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alert alert-danger" *ngIf="errorMessage">
+  Error: {{ errorMessage }}
+</div>

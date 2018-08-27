@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4">
+    <app-project-list
+    [errorMessage]="errorMessage$ | async"
+    [displayCode]="displayCode$ | async"
+    [projects]="projects$ | async"
+    [selectedProject]="selectedProject$ | async"
+    (checked)="checkChanged($event)"
+    (initializeNewProject)="newProject()"
+    (selected)="projectSelected($event)">
+    </app-project-list>
+  </div>
+  <div class="col-md-8">
+    <app-project-edit
+      [selectedProject]="selectedProject$ | async"
+      [errorMessage]="errorMessage$ | async"
+      (clearCurrent)="clearProject()"
+      (update)="updateProject($event)"
+      (delete)="deleteProject($event)"
+      (create)="saveProject($event)">
+    </app-project-edit>
+  </div>
+</div>
